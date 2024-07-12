@@ -3,6 +3,7 @@ import User from "@/models/User";
 import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
 import { writeFile } from "fs/promises";
+import path from "path";
 
 /* USER INSCRIPTION */
 export async function POST (req) {
@@ -25,7 +26,9 @@ export async function POST (req) {
         const bytes = await file.arrayBuffer()
         const buffer = Buffer.from(bytes)
 
-        const profileImagePath = `C:/Users/emmar/OneDrive/Bureau/ProgExo/B3Dev/MAIA AGENCY/Urban-Roots/urban-roots/public/uploads/${file.name}`
+        // Utilisation de chemins relatifs pour la gestion des fichiers
+        const uploadsDir = path.join(process.cwd(), "public/uploads");
+        const profileImagePath = path.join(uploadsDir, file.name);
         await writeFile(profileImagePath, buffer)
 
         console.log(`ouvre ${profileImagePath} pour voir le fichier téléchargé`)
