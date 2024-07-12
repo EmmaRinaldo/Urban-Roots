@@ -69,7 +69,7 @@ const Login = () => {
                 {error && <p className="text-red-600">{error}</p>}
 
                 <button type="submit" className="px-[15px] py-[10px] bg-gradient-to-r from-green-700 to-green-300 border-none text-[18px] font-semibold cursor-pointer transition duration-300 ease-linear text-white rounded-[10px] flex justify-center items-center gap-[10px] hover:shadow-[0_0_10px_3px_rgba(255,255,255,1)] w-[100%]">
-                    Se Connecter
+                    S'identifier
                 </button>
 
             </form>

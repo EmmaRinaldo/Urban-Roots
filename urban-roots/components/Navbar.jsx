@@ -45,9 +45,8 @@ const Navbar = () => {
 
             {dropdownMenu && user && (
                 <div className='absolute bg-white right-[50px] sm:top-[100px] top-[115px] flex flex-col w-[200px] py-[10px] border border-gray-200 rounded-[20px] shadow-md z-[9999] sm:right-20'>
-                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/a-propos">À propos</Link>
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/profile">Mon compte</Link>
-                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/carte-jardins">Carte des Jardins</Link>
+                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/carte">Carte des Jardins</Link>
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/forum">Forum</Link>
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/guides">Guides Jardinage</Link>
                     <a onClick={handleLogout} className='px-[15px] py-[8px] text-red-600 font-bold cursor-pointer hover:text-red-800 hover:bg-[rgba(217,213,213,0.2)]'>Se déconnecter</a>

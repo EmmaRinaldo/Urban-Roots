@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="w-[100%] footer-part flex md:flex-row flex-col gap-10 justify-between items-center mt-[2px] px-6 sm:px-16 bg-[#e0f7e0] py-20 bottom-0 left-0 right-0">
       <div className="flex flex-col">
         <a href="/">
-            <img src="/media/logo-urban-roots.png" alt="Logo Urban Roots" className='bg-white rounded-[50%] w-[200px] cursor-pointer' />
+            <img src="/media/logo-urban-roots.png" alt="Logo Urban Roots" className='bg-white rounded-[50%] w-[150px] cursor-pointer' />
         </a>
         
         
@@ -14,9 +14,6 @@ const Footer = () => {
 
 
       <div className=" flex flex-col">
-        <Link href="/a-propos" className="underline sm:mt-15 font-semibold">
-            À PROPOS
-        </Link>
         <Link href="/politique-de-confidentialite" className="underline sm:mt-15 font-semibold">
           POLITIQUE DE CONFIDENTIALITÉ
         </Link>
