@@ -58,21 +58,28 @@ const handler = NextAuth({
 
         async signIn({ account, profile }) {
             if (account.provider === "google") {
-                await connectToDB();
-        
-                let user = await User.findOne({ email: profile.email });
-        
-                if (!user) {
-                  user = await User.create({
-                    email: profile.email,
-                    username: profile.name,
-                    profileImagePath: profile.picture,
-                  });
+
+                try {
+                    await connectToDB()
+
+                    /** Check si utilisateur existe */
+                    let user = await User.findOne({ email: profile.email })
+
+                    if (!user) {
+                        user = await User.create({
+                            email: profile.email,
+                            username: profile.name,
+                            profileImagePath: profile.picture,
+                        })
+                    }
+
+                    return user
+
+                } catch (err) {
+                    console.log("Erreur de vérification de l'existence de l'utilisateur: ", err.message)
                 }
-        
-                return true;
             }
-            return true;
+            return true
         },
     }
 })

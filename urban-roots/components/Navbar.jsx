@@ -1,6 +1,6 @@
 "use client";
 import { Menu, Person } from '@mui/icons-material'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link';
 import { useState } from 'react'
 
@@ -11,6 +11,10 @@ const Navbar = () => {
     console.log(user)
 
     const [dropdownMenu, setDropdownMenu] = useState(false)
+
+    const handleLogout = async () => {
+        signOut({ callbackUrl: "/" })
+    }
 
   return (
     <div className='py-[15px] px-[70px] pb-[30px] flex justify-between items-center relative sm:px-20 sm:py-[10px]'>
@@ -46,7 +50,7 @@ const Navbar = () => {
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/carte-jardins">Carte des Jardins</Link>
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/forum">Forum</Link>
                     <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/guides">Guides Jardinage</Link>
-                    <a href="" className='px-[15px] py-[8px] text-red-600 font-bold cursor-pointer hover:text-red-800 hover:bg-[rgba(217,213,213,0.2)]'>Se déconnecter</a>
+                    <a onClick={handleLogout} className='px-[15px] py-[8px] text-red-600 font-bold cursor-pointer hover:text-red-800 hover:bg-[rgba(217,213,213,0.2)]'>Se déconnecter</a>
 
                 </div>
             )}
