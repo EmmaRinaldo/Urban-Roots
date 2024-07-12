@@ -1,5 +1,6 @@
 import React from 'react'
 import './globals.css';
+import Provider from '@/components/Provider';
 
 export const metadata = {
   title: 'UrbanRoots',
@@ -7,13 +8,15 @@ export const metadata = {
 
 }
 
-const layout = ({children}) => {
+const layout = ({ children }) => {
   return (
     <html>
       <body>
-        <main>
-          {children}
-        </main>
+        <Provider>
+          <main>
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   )
