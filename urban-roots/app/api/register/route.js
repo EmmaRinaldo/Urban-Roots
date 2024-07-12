@@ -2,7 +2,7 @@ import { connectToDB } from "@/mongodb/database";
 import User from "@/models/User";
 import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 
 /* USER INSCRIPTION */
@@ -27,7 +27,11 @@ export async function POST (req) {
         const buffer = Buffer.from(bytes)
 
         // Utilisation de chemins relatifs pour la gestion des fichiers
-        const uploadsDir = path.join(process.cwd(), "public/uploads");
+        const uploadsDir = path.join(process.cwd(), "/public/uploads");
+
+        // Vérifier et créer le répertoire si nécessaire
+        await mkdir(uploadsDir, { recursive: true });
+
         const profileImagePath = path.join(uploadsDir, file.name);
         await writeFile(profileImagePath, buffer)
 
