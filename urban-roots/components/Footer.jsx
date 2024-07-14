@@ -14,6 +14,9 @@ const Footer = () => {
 
 
       <div className=" flex flex-col">
+        <Link href="/carte" className="underline sm:mt-15 font-semibold">
+          CARTES DES JARDINS
+        </Link>
         <Link href="/politique-de-confidentialite" className="underline sm:mt-15 font-semibold">
           POLITIQUE DE CONFIDENTIALITÉ
         </Link>

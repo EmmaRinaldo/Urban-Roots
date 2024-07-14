@@ -22,24 +22,31 @@ const Navbar = () => {
             <img src="/media/logo-urban-roots.png" alt="Logo Urban Roots" className='w-[100px] cursor-pointer' />
         </a>
 
-        <div className='flex items-center gap-[20px] sm:gap-0'>
+        <div className='flex items-center gap-[20px]'>
             <button
                 onClick={() => setDropdownMenu(!dropdownMenu)}
                 className='flex items-center border-none gap-[10px] bg-white cursor-pointer'
             >
                 <Menu sx={{ color: "gray" }}/>
-                {!user ? (
-                    <Person sx={{ color: "gray" }}/>
-                ) : (
-                    <img src={user.profileImagePath} alt="profile" className='bg-cover rounded-[50%] w-[40px] h-[40px]' />
-                )}
+                
             </button>
+
+            {!user ? (
+                <a href="/login" className='flex items-center'>
+                    <Person sx={{ color: "gray" }}/>
+                </a>
+            ) : (
+                <a href="/profile">
+                    <img src={user.profileImagePath} alt="profile" className='bg-cover rounded-[50%] w-[40px] h-[40px]' />
+                </a>
+            )}
 
             {dropdownMenu && !user && (
                 <div className='absolute bg-white right-[50px] sm:top-[100px] top-[115px] flex flex-col w-[200px] py-[10px] border border-gray-200 rounded-[20px] shadow-md z-[9999] sm:right-20'>
-                    <Link href="/a-propos" className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]'>A propos</Link>
-                    <Link href="/login" className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]'>Se connecter</Link>
-                    <Link href="/register" className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]'>S'inscrire</Link>
+                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/carte">Carte des Jardins</Link>
+                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/forum">Forum</Link>
+                    <Link className='px-[15px] py-[8px] text-black font-bold cursor-pointer hover:text-[#7ab46e] hover:bg-[rgba(217,213,213,0.2)]' href="/guides">Guides Jardinage</Link>
+                    
                 </div>
             )}
 
