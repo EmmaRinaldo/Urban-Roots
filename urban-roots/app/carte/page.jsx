@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
+import 'react-leaflet-markercluster/dist/styles.min.css';
 
 // Importer dynamiquement les composants react-leaflet avec SSR désactivé
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
-const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
-const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
+const MarkerCluster = dynamic(() => import('@/components/MarkerCluster'), { ssr: false });
 
 // Fix for default marker icons not showing
 if (typeof window !== 'undefined') {
@@ -60,23 +60,12 @@ const Carte = () => {
       
       <div className="bg-white text-gray-800">
         {isClient && (
-          <MapContainer center={[48.819555930925, 2.2994846425247]} zoom={7} style={{ height: '100vh', width: '70%' }}>
+          <MapContainer center={[46.603354, 1.888334]} zoom={6} className="h-[100vh] sm:w-[70%]">
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
-            {markers.map((marker, index) => (
-              <Marker key={index} position={[marker.lat, marker.lng]}>
-                <Popup>
-                  <div>
-                    <h2 className="font-bold">{marker.title}</h2>
-                    <p><strong>Type de Projet:</strong> {marker.list_typeprojet.join(', ')}</p>
-                    <p><strong>Code Postal:</strong> {marker.cp}</p>
-                    <p><strong>Ville:</strong> {marker.ville}</p>
-                  </div>
-                </Popup>
-              </Marker>
-            ))}
+            <MarkerCluster markers={markers} />
           </MapContainer>
         )}
       </div>
