@@ -19,7 +19,7 @@ export function SectionCarte() {
                             <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Rejoindre des initiatives de jardinage près de chez vous</li>
                             <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Partager des ressources et des conseils avec la communauté</li>
                         </ul>
-                        <p>Commencez dès maintenant à explorer les possibilités de jardinage urbain dans votre région et connectez-vous avec d'autres passionnés de jardinage.</p>
+                        <p>Commencez dès maintenant à explorer les possibilités de jardinage urbain dans votre région et connectez-vous avec d&apos;autres passionnés de jardinage.</p>
                         <a href="/carte" className="inline-block mt-4 px-8 py-3 bg-green-600 hover:bg-green-700 rounded-md text-white font-semibold text-lg">Voir la Carte</a>
                     </div>
                 </div>
