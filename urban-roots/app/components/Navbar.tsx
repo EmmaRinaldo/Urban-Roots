@@ -33,7 +33,7 @@ export async function Navbar() {
                     <div className="flex items-center gap-x-4">
                         <NavDropdown />
                         <Button variant={"secondary"} asChild>
-                            <RegisterLink>S'inscrire</RegisterLink>
+                            <RegisterLink>S&apos;inscrire</RegisterLink>
                         </Button>
                         <Button asChild>
                             <LoginLink>Se connecter</LoginLink>

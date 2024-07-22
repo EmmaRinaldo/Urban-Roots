@@ -11,7 +11,7 @@ export function About() {
                         <h3 className="text-3xl font-bold mb-4">Nos Objectifs</h3>
                         <p className="mb-4">Nous avons pour mission de :</p>
                         <ul className="list-disc list-inside mb-4 w-fit text-black">
-                            <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Encourager le jardinage urbain et la création d'espaces verts</li>
+                            <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Encourager le jardinage urbain et la création d&apos;espaces verts</li>
                             <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Favoriser la collaboration communautaire et l&apos;entraide</li>
                             <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Améliorer la durabilité urbaine grâce à des pratiques écoresponsables</li>
                             <li className='bg-[#e0f7e0] list-none p-3 rounded-xl my-2 font-semibold'>Éduquer et sensibiliser à l&apos;éco-responsabilité</li>
