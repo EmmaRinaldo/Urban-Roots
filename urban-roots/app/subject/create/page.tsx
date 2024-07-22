@@ -16,7 +16,7 @@ const initialState = {
     status: "",
 }
 
-export default function SubjectPage() {
+export default function SubjectCreate() {
 
     const [state, formAction] = useFormState(createSubject, initialState);
     const {toast} = useToast();

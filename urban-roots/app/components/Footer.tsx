@@ -1,13 +1,19 @@
 import Link from "next/link";
+import urbanLogo from "../../public/logo-urban-roots.png";
+import Image from "next/image";
 
 export function Footer() {
     return(
-        <footer className="w-[100%] footer-part flex md:flex-row flex-col gap-10 justify-between items-center mt-[2px] px-6 sm:px-16 py-20 bottom-0 left-0 right-0">
+        <footer className="w-[100%] footer-part flex md:flex-row flex-col gap-10 justify-between items-center mt-5 px-6 sm:px-16 py-20 bottom-0 left-0 right-0 ">
             
-            <div className="flex flex-col">
-                <a href="/">
-                    <img src="logo-urban-roots.png" alt="Logo Urban Roots" className='bg-white rounded-[50%] w-[150px] cursor-pointer' />
-                </a>
+            <div className="flex">
+                <Link href="/">
+                <Image 
+                    src={urbanLogo}
+                    alt="Urban Roots Logo"
+                    className="bg-white rounded-[50%] w-[150px]"
+                />
+            </Link>
             </div>
 
             <div className=" flex flex-col">

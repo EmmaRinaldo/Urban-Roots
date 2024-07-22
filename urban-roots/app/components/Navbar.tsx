@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { UserDropdown } from "./UserDropdown";
+import CartePage from "../carte/page";
+import { NavDropdown } from "./NavDropdown";
 
 export async function Navbar() {
 
@@ -23,11 +25,13 @@ export async function Navbar() {
             </Link>
 
             <div className="flex items-center gap-x-4">
+                
                 <ThemeToggle />
                 {user ? (
                     <UserDropdown userImage={user.picture} />
                 ) : (
                     <div className="flex items-center gap-x-4">
+                        <NavDropdown />
                         <Button variant={"secondary"} asChild>
                             <RegisterLink>S'inscrire</RegisterLink>
                         </Button>

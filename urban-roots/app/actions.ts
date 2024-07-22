@@ -4,6 +4,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import prisma from "./lib/db";
 import { Prisma } from "@prisma/client";
+import { stat } from "fs";
 
 export async function updateUsername(prevState: any, formDate: FormData) {
     const {getUser} = getKindeServerSession()
@@ -77,7 +78,36 @@ export async function createSubject(prevState: any, formData: FormData) {
         }
         throw e;
     }
+}
 
-    
+export async function updateSujetDescription(prevState: any, formData: FormData) {
+    const {getUser} = getKindeServerSession();
+    const user = await getUser();
+    if(!user) {
+        return redirect("/api/auth/login");
+    }
 
+    try {
+        const projectName = formData.get("projectName") as string;
+        const description = formData.get("description") as string;
+
+        await prisma.subjectforum.update({
+            where: {
+                name: projectName,
+            },
+            data: {
+                description: description,
+            }
+        })
+
+        return {
+            status: "green",
+            message: "Description mise à jour avec succès !",
+        }
+    } catch(e) {
+        return {
+            status: "error",
+            message: "Une erreur s'est produite lors de la mise à jour de la description",
+        }
+    }
 }
