@@ -29,5 +29,11 @@ export async function GET() {
         })
     }
 
-    return NextResponse.redirect("http://localhost:3000/")
+    const redirectUrl = process.env.CREATION_REDIRECT_URL;
+    
+    if (!redirectUrl) {
+        throw new Error("CREATION_REDIRECT_URL is not defined");
+    }
+    
+    return NextResponse.redirect(redirectUrl);
 }
