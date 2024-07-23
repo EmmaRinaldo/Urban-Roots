@@ -119,7 +119,7 @@ function CartePage() {
         )}
       </div>
 
-      <div className='lg:w-[25%] w-full mx-auto'>
+      <div className='lg:w-[25%] w-full mx-auto lg:h-[80vh]'>
         <Tabs defaultValue='filtres' className='w-full'>
           <TabsList className="grid w-full grid-cols-2 h-full px-2">
             <TabsTrigger value='filtres' className='md:text-lg text-base'>
@@ -236,7 +236,7 @@ function CartePage() {
           </TabsContent>
 
           <TabsContent value='liste'>
-            <ScrollArea className="h-[80vh]">
+            <ScrollArea className="h-[70vh]">
               <div className='p-4'>
                 {visibleMarkers.map((marker, index) => (
                   <div key={marker.slug}>
