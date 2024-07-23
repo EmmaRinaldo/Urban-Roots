@@ -54,10 +54,10 @@ function CartePage() {
   }, []);
 
   return (
-    <div className='mx-auto flex flex-col md:flex-row'>
-      <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 order-2 md:order-1 mx-auto lg:h-[100vh] h-[50vh]">
+    <div className='mx-auto flex flex-col md:flex-row z-0'>
+      <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 mx-auto lg:h-[100vh] h-[50vh]">
         {isClient && (
-          <MapContainer center={[46.603354, 1.888334]} zoom={6} className="h-full w-full">
+          <MapContainer center={[46.603354, 1.888334]} zoom={6} className="h-full w-full z-0">
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -67,7 +67,7 @@ function CartePage() {
         )}
       </div>
 
-      <div className='lg:w-[35%] w-full order-1 md:order-2 mx-auto mb-5'>
+      <div className='lg:w-[35%] w-full mx-auto mb-5'>
         
         <Tabs defaultValue='filtres' className='w-full'>
           <TabsList className="grid w-full grid-cols-2 h-full px-2">
