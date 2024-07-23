@@ -8,37 +8,38 @@ import { Marker } from '../../types/marker';
 
 interface MarkerClusterProps {
   markers: Marker[];
+  onMarkersChange: (count: number) => void;
 }
 
 // Custom Icon pour chaque type de projet
 const jardinIcon = L.icon({
   iconUrl: '/jardin-icon.png',
-  iconSize: [100, 70],
+  iconSize: [50, 80],
   iconAnchor: [19, 50], 
-  popupAnchor: [30, -50],
+  popupAnchor: [5, -50],
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
   shadowSize: [70, 70],
-  shadowAnchor: [-6, 45]
+  shadowAnchor: [12, 45]
 });
 
 const fermeParticipativeIcon = L.icon({
   iconUrl: '/ferme-participative-icon.png',
-  iconSize: [100, 70],
+  iconSize: [50, 80],
   iconAnchor: [19, 50], 
-  popupAnchor: [30, -50],
+  popupAnchor: [5, -50],
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
   shadowSize: [70, 70],
-  shadowAnchor: [-6, 45]
+  shadowAnchor: [12, 45]
 });
 
 const fermeSpecialiseeIcon = L.icon({
   iconUrl: '/ferme-specialisee-icon.png',
-  iconSize: [100, 70],
+  iconSize: [50, 80],
   iconAnchor: [19, 50], 
-  popupAnchor: [30, -50],
+  popupAnchor: [5, -50],
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
   shadowSize: [70, 70],
-  shadowAnchor: [-6, 45]
+  shadowAnchor: [12, 45]
 });
 
 const getIconForProjectType = (type: string) => {
@@ -52,12 +53,12 @@ const getIconForProjectType = (type: string) => {
     default:
       return L.icon({
         iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', //Icon par défaut
-        iconSize: [100, 70], 
-        iconAnchor: [19, 50],
-        popupAnchor: [30, -50],
+        iconSize: [50, 80],
+        iconAnchor: [19, 50], 
+        popupAnchor: [5, -50],
         shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
         shadowSize: [70, 70],
-        shadowAnchor: [-6, 45]
+        shadowAnchor: [12, 45]
       });
   }
 };
@@ -75,7 +76,7 @@ const mapProjectType = (type: string): string => {
   }
 };
 
-export function MarkerCluster({ markers }: MarkerClusterProps) {
+export function MarkerCluster({ markers, onMarkersChange }: MarkerClusterProps) {
   const map = useMap();
   const [markerCluster, setMarkerCluster] = useState<L.MarkerClusterGroup | null>(null);
 
@@ -100,12 +101,24 @@ export function MarkerCluster({ markers }: MarkerClusterProps) {
     map.addLayer(markerClusterGroup);
     setMarkerCluster(markerClusterGroup);
 
+    const updateVisibleMarkersCount = () => {
+      const bounds = map.getBounds();
+      const visibleMarkers = leafletMarkers.filter(marker =>
+        bounds.contains((marker as L.Marker).getLatLng())
+      );
+      onMarkersChange(visibleMarkers.length);
+    };
+
+    map.on('moveend', updateVisibleMarkersCount);
+    updateVisibleMarkersCount();
+
     return () => {
       if (markerClusterGroup) {
         map.removeLayer(markerClusterGroup);
       }
+      map.off('moveend', updateVisibleMarkersCount);
     };
-  }, [map, markers]);
+  }, [map, markers, onMarkersChange]);
 
   return null;
 }
