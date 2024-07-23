@@ -37,5 +37,9 @@ export async function GET(req: NextRequest) {
         throw new Error("CREATION_REDIRECT_URL is not defined");
     }
     
-    return NextResponse.redirect("https://urbanroots.fr");
+    return NextResponse.redirect(
+        process.env.NODE_ENV === "development"
+        ? "http://localhost:3000/"
+        : "https://urbanroots.fr/"
+    );
 }

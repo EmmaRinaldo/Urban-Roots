@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import {type Editor, useEditor, EditorContent, JSONContent} from '@tiptap/react'
 import Starterkit from '@tiptap/starter-kit'
 
+// TODO enlever menu bar parce que ça fait buguer l'enregistrement du post
 export const Menubar = ({editor}: {editor: Editor | null}) => {
     if(!editor) {
         return null;
