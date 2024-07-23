@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 import L from "leaflet";
 import "leaflet.markercluster/dist/leaflet.markercluster";
-import { useMap } from "react-leaflet";
+import { useMapEvent } from "react-leaflet";
 import { Marker } from '../../types/marker';
 
 interface MarkerClusterProps {
   markers: Marker[];
-  onMarkersChange: (count: number) => void;
+  onMarkersChange: (visibleMarkers: Marker[]) => void;
 }
 
-// Custom Icon pour chaque type de projet
+// Custom Icon for each project type
 const jardinIcon = L.icon({
   iconUrl: '/jardin-icon.png',
   iconSize: [50, 80],
@@ -52,7 +52,7 @@ const getIconForProjectType = (type: string) => {
       return fermeSpecialiseeIcon;
     default:
       return L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', //Icon par défaut
+        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', // Default icon
         iconSize: [50, 80],
         iconAnchor: [19, 50], 
         popupAnchor: [5, -50],
@@ -77,8 +77,13 @@ const mapProjectType = (type: string): string => {
 };
 
 export function MarkerCluster({ markers, onMarkersChange }: MarkerClusterProps) {
-  const map = useMap();
-  const [markerCluster, setMarkerCluster] = useState<L.MarkerClusterGroup | null>(null);
+  const map = useMapEvent('moveend', () => {
+    const bounds = map.getBounds();
+    const visibleMarkers = markers.filter(marker =>
+      bounds.contains([parseFloat(marker.lat), parseFloat(marker.lng)])
+    );
+    onMarkersChange(visibleMarkers);
+  });
 
   useEffect(() => {
     if (!map || !markers || markers.length === 0) return;
@@ -99,26 +104,12 @@ export function MarkerCluster({ markers, onMarkersChange }: MarkerClusterProps) 
     markerClusterGroup.addLayers(leafletMarkers);
 
     map.addLayer(markerClusterGroup);
-    setMarkerCluster(markerClusterGroup);
-
-    const updateVisibleMarkersCount = () => {
-      const bounds = map.getBounds();
-      const visibleMarkers = leafletMarkers.filter(marker =>
-        bounds.contains((marker as L.Marker).getLatLng())
-      );
-      onMarkersChange(visibleMarkers.length);
-    };
-
-    map.on('moveend', updateVisibleMarkersCount);
-    updateVisibleMarkersCount();
-
     return () => {
       if (markerClusterGroup) {
         map.removeLayer(markerClusterGroup);
       }
-      map.off('moveend', updateVisibleMarkersCount);
     };
-  }, [map, markers, onMarkersChange]);
+  }, [map, markers]);
 
   return null;
 }

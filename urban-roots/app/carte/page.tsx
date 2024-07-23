@@ -1,13 +1,16 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 import { Marker } from '../../types/marker';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Filter, List } from 'lucide-react';
 import { Checkbox } from '@/components/ui/checkbox';
+import MarkerListItem from '../components/MarkerListItem';
+import { Separator } from '@/components/ui/separator';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
@@ -26,7 +29,9 @@ function CartePage() {
   const [markers, setMarkers] = useState<Marker[]>([]);
   const [isClient, setIsClient] = useState(false);
   const [filters, setFilters] = useState<string[]>([]);
-  const [visibleMarkersCount, setVisibleMarkersCount] = useState<number>(0);
+  const [visibleMarkers, setVisibleMarkers] = useState<Marker[]>([]);
+
+  const mapRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
     getData().then(data => setMarkers(data)).catch(error => console.error('Error fetching markers:', error));
@@ -68,15 +73,35 @@ function CartePage() {
     filters.length === 0 || filters.some(filter => marker.list_typeprojet.includes(filter))
   );
 
-  const handleMarkersChange = (count: number) => {
-    setVisibleMarkersCount(count);
+  const handleMarkersChange = (visibleMarkers: Marker[]) => {
+    setVisibleMarkers(visibleMarkers);
   };
 
   return (
     <div className='mx-auto flex flex-col md:flex-row z-0'>
       <div className="lg:w-[65%] w-full flex flex-col gap-y-5 mx-auto lg:h-[100vh] h-[50vh]">
         {isClient && (
-          <MapContainer center={[46.603354, 1.888334]} zoom={6} className="h-full w-full z-0">
+          <MapContainer
+            center={[46.603354, 1.888334]}
+            zoom={6}
+            className="h-full w-full z-0"
+            whenReady={() => {
+              const mapInstance = mapRef.current;
+              if (mapInstance) {
+                const updateVisibleMarkersCount = () => {
+                  const bounds = mapInstance.getBounds();
+                  const visibleMarkers = filteredMarkers.filter(marker =>
+                    bounds.contains([parseFloat(marker.lat), parseFloat(marker.lng)])
+                  );
+                  handleMarkersChange(visibleMarkers);
+                };
+
+                mapInstance.on('moveend', updateVisibleMarkersCount);
+                updateVisibleMarkersCount();
+              }
+            }}
+            ref={mapRef}
+          >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -93,7 +118,7 @@ function CartePage() {
               <Filter className='h-5 w-5 mr-2' /> Filtres
             </TabsTrigger>
             <TabsTrigger value='liste' className='md:text-lg text-base'>
-              <List className='h-5 w-5 mr-2' />Liste<span className='md:text-base text-sm ml-2 text-muted-foreground'>({visibleMarkersCount})</span>
+              <List className='h-5 w-5 mr-2' />Liste<span className='md:text-base text-sm ml-2 text-muted-foreground'>({visibleMarkers.length})</span>
             </TabsTrigger>
           </TabsList>
 
@@ -142,7 +167,16 @@ function CartePage() {
           </TabsContent>
 
           <TabsContent value='liste'>
-            <p>Liste</p>
+            <ScrollArea className="h-[80vh]">
+              <div className='p-4'>
+                {visibleMarkers.map((marker, index) => (
+                  <div key={marker.slug}>
+                    <MarkerListItem marker={marker} />
+                    {index < visibleMarkers.length - 1 && <Separator className="my-2" />}
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
           </TabsContent>
         </Tabs>
       </div>
