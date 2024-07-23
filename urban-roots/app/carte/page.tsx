@@ -55,7 +55,7 @@ function CartePage() {
 
   return (
     <div className='mx-auto flex flex-col md:flex-row z-0'>
-      <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 mx-auto lg:h-[100vh] h-[50vh]">
+      <div className="lg:w-[65%] w-full flex flex-col gap-y-5 mx-auto lg:h-[100vh] h-[50vh]">
         {isClient && (
           <MapContainer center={[46.603354, 1.888334]} zoom={6} className="h-full w-full z-0">
             <TileLayer
