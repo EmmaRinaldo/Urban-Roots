@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import MarkerListItem from '../components/MarkerListItem';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
@@ -29,6 +30,9 @@ function CartePage() {
   const [markers, setMarkers] = useState<Marker[]>([]);
   const [isClient, setIsClient] = useState(false);
   const [filters, setFilters] = useState<string[]>([]);
+  const [activityFilter, setActivityFilter] = useState<string>('none');
+  const [techniqueFilter, setTechniqueFilter] = useState<string>('none');
+  const [productionFilter, setProductionFilter] = useState<string>('none');
   const [visibleMarkers, setVisibleMarkers] = useState<Marker[]>([]);
 
   const mapRef = useRef<L.Map | null>(null);
@@ -69,9 +73,13 @@ function CartePage() {
     );
   };
 
-  const filteredMarkers = markers.filter(marker =>
-    filters.length === 0 || filters.some(filter => marker.list_typeprojet.includes(filter))
-  );
+  const filteredMarkers = markers.filter(marker => {
+    const matchesType = filters.length === 0 || filters.some(filter => marker.list_typeprojet.includes(filter));
+    const matchesActivity = activityFilter === 'none' || marker.list_typeactivite.includes(activityFilter);
+    const matchesTechnique = techniqueFilter === 'none' || marker.list_techniqueprod.includes(techniqueFilter);
+    const matchesProduction = productionFilter === 'none' || marker.list_typeprod.includes(productionFilter);
+    return matchesType && matchesActivity && matchesTechnique && matchesProduction;
+  });
 
   const handleMarkersChange = (visibleMarkers: Marker[]) => {
     setVisibleMarkers(visibleMarkers);
@@ -79,7 +87,7 @@ function CartePage() {
 
   return (
     <div className='mx-auto flex flex-col md:flex-row z-0'>
-      <div className="lg:w-[65%] w-full flex flex-col gap-y-5 mx-auto lg:h-[80vh] h-[53vh]">
+      <div className="lg:w-[75%] w-full flex flex-col gap-y-5 mx-auto lg:h-[80vh] h-[53vh]">
         {isClient && (
           <MapContainer
             center={[46.603354, 1.888334]}
@@ -111,7 +119,7 @@ function CartePage() {
         )}
       </div>
 
-      <div className='lg:w-[35%] w-full mx-auto'>
+      <div className='lg:w-[25%] w-full mx-auto'>
         <Tabs defaultValue='filtres' className='w-full'>
           <TabsList className="grid w-full grid-cols-2 h-full px-2">
             <TabsTrigger value='filtres' className='md:text-lg text-base'>
@@ -123,44 +131,105 @@ function CartePage() {
           </TabsList>
 
           <TabsContent value='filtres'>
-            <div className="p-4">
+            <div className="p-10">
               <h2 className="text-2xl font-semibold mb-4 text-primary">Type de projet</h2>
               <div className="space-y-4">
-                <div className="flex items-center">
-                  <label htmlFor="jardin-potager" className="cursor-pointer">
-                    <img src="/jardin-icon.png" alt="Jardin" className="w-fit h-[50px] inline-block mr-1" />
-                    Jardin / potager
-                  </label>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <img src="/jardin-icon.png" alt="Jardin" className="w-fit h-[50px]" />
+                    <label htmlFor="jardin-potager" className="cursor-pointer font-medium text-base">
+                      Jardin / potager
+                    </label>
+                  </div>
                   <Checkbox
                     id="jardin-potager"
                     checked={filters.includes('jardin-potager')}
                     onCheckedChange={() => handleFilterChange('jardin-potager')}
-                    className="ml-3"
                   />
                 </div>
-                <div className="flex items-center">
-                  <label htmlFor="ferme-urbaine-participative" className="cursor-pointer">
-                    <img src="/ferme-participative-icon.png" alt="Ferme Participative" className="w-fit h-11 inline-block mr-1" />
-                    Ferme urbaine participative
-                  </label>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <img src="/ferme-participative-icon.png" alt="Ferme Participative" className="w-fit h-[50px]" />
+                    <label htmlFor="ferme-urbaine-participative" className="cursor-pointer font-medium text-base">
+                      Ferme urbaine participative
+                    </label>
+                  </div>
                   <Checkbox
                     id="ferme-urbaine-participative"
                     checked={filters.includes('ferme-urbaine-participative')}
                     onCheckedChange={() => handleFilterChange('ferme-urbaine-participative')}
-                    className="ml-3"
                   />
                 </div>
-                <div className="flex items-center">
-                  <label htmlFor="ferme-urbaine-specialisee" className="cursor-pointer">
-                    <img src="/ferme-specialisee-icon.png" alt="Ferme Spécialisée" className="w-fit h-11 inline-block mr-1" />
-                    Ferme urbaine spécialisée
-                  </label>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <img src="/ferme-specialisee-icon.png" alt="Ferme Spécialisée" className="w-fit h-[50px]" />
+                    <label htmlFor="ferme-urbaine-specialisee" className="cursor-pointer font-medium text-base">
+                      Ferme urbaine spécialisée
+                    </label>
+                  </div>
                   <Checkbox
                     id="ferme-urbaine-specialisee"
                     checked={filters.includes('ferme-urbaine-specialisee')}
                     onCheckedChange={() => handleFilterChange('ferme-urbaine-specialisee')}
-                    className="ml-3"
                   />
+                </div>
+              </div>
+
+              <Separator className="my-4" />
+
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="activity-filter" className="block text-base font-medium text-gray-700">
+                    Type d'activité
+                  </label>
+                  <Select value={activityFilter} onValueChange={setActivityFilter}>
+                    <SelectTrigger id="activity-filter" className="w-full">
+                      <SelectValue placeholder="Sélectionnez une activité" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="none">Aucune</SelectItem>
+                      <SelectItem value="animation">Animation</SelectItem>
+                      <SelectItem value="compostage">Compostage</SelectItem>
+                      <SelectItem value="ecopaturage">Écopâturage</SelectItem>
+                      <SelectItem value="production">Production</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label htmlFor="technique-filter" className="block text-base font-medium text-gray-700">
+                    Technique de production
+                  </label>
+                  <Select value={techniqueFilter} onValueChange={setTechniqueFilter}>
+                    <SelectTrigger id="technique-filter" className="w-full">
+                      <SelectValue placeholder="Sélectionnez une technique" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="none">Aucune</SelectItem>
+                      <SelectItem value="permaculture">Permaculture</SelectItem>
+                      <SelectItem value="pleine-terre">Pleine terre</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label htmlFor="production-filter" className="block text-base font-medium text-gray-700">
+                    Type de production
+                  </label>
+                  <Select value={productionFilter} onValueChange={setProductionFilter}>
+                    <SelectTrigger id="production-filter" className="w-full">
+                      <SelectValue placeholder="Sélectionnez un type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="none">Aucune</SelectItem>
+                      <SelectItem value="compost">Compost</SelectItem>
+                      <SelectItem value="fleurs">Fleurs</SelectItem>
+                      <SelectItem value="fruits">Fruits</SelectItem>
+                      <SelectItem value="herbes-aromatiques">Herbes aromatiques</SelectItem>
+                      <SelectItem value="legumes">Légumes</SelectItem>
+                      <SelectItem value="maraichage-arboriculture">Maraîchage & Arboriculture</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
             </div>
