@@ -180,7 +180,7 @@ function CartePage() {
               <div className="space-y-4">
                 <div>
                   <label htmlFor="activity-filter" className="block text-base font-medium text-gray-700">
-                    Type d'activité
+                    Type d&apos;activité
                   </label>
                   <Select value={activityFilter} onValueChange={setActivityFilter}>
                     <SelectTrigger id="activity-filter" className="w-full">
