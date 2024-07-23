@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
+// TODO Changer boutton quand utilisateur est connecté
 export function HeroSection() {
 
     return(
@@ -13,7 +14,8 @@ export function HeroSection() {
                     <p className="text-lg sm:text-xl mb-8">Rejoignez la communauté UrbanRoots pour un jardinage urbain collaboratif et écoresponsable.</p>
                     <Button className="px-8 py-7 bg-green-700 border-none text-[18px] cursor-pointer transition duration-300 ease-linear text-white rounded-[10px] font-semibold text-lg hover:shadow-[0_0_10px_3px_rgba(255,255,255,1)]">
                         <RegisterLink>Rejoignez la Communauté</RegisterLink>
-                    </Button>
+                        
+                    </Button> 
                 </div>
             </div>
             

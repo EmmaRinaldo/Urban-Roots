@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -32,6 +34,21 @@ export function NavDropdown() {
                     Guides Jardinages
                 </Link>
             </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem>
+                <Button variant={"secondary"} asChild className="w-full">
+                    <RegisterLink>S&apos;inscrire</RegisterLink>
+                </Button>
+            </DropdownMenuItem>
+            
+            <DropdownMenuItem>
+                <Button asChild className="w-full">
+                    <LoginLink>Se connecter</LoginLink>
+                </Button>
+            </DropdownMenuItem>
+                        
         </DropdownMenuContent>
         </DropdownMenu>
     )
