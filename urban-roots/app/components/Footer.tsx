@@ -20,6 +20,12 @@ export function Footer() {
                 <Link href="/carte" className="underline sm:mt-15 font-semibold">
                 CARTES DES JARDINS
                 </Link>
+                <Link href="/forum" className="underline sm:mt-15 font-semibold">
+                FORUM
+                </Link>
+                <Link href="/quide" className="underline sm:mt-15 font-semibold">
+                GUIDES JARDINAGE
+                </Link>
                 <Link href="/politique-de-confidentialite" className="underline sm:mt-15 font-semibold">
                 POLITIQUE DE CONFIDENTIALITÉ
                 </Link>

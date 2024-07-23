@@ -46,7 +46,7 @@ export default function SubjectCreate() {
 
                 <div className="w-full flex mt-5 gap-x-5 justify-end">
                     <Button variant="secondary" asChild>
-                        <Link href="/">Annuler</Link>
+                        <Link href="/forum">Annuler</Link>
                     </Button>
                     <SubmitButtons text="Céer un Sujet"/>
                 </div>

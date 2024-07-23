@@ -81,3 +81,7 @@
     background-color: var(--nav-background);
   }
 }
+
+.ProseMirror:focus{
+  outline: none;
+}

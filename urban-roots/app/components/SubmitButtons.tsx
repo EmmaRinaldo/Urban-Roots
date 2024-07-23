@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2, ThumbsDown, ThumbsUp } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
 export function SubmitButtons({text}: {text: string}) {
@@ -36,6 +36,42 @@ export function SaveButton() {
             ): (
                 <Button size="sm" className="mt-2 w-full" type="submit">
                     Sauvegarder
+                </Button>
+            )}
+        </>
+    )
+}
+
+export function UpVote() {
+    const {pending} = useFormStatus();
+
+    return (
+        <>
+            {pending ? (
+                <Button disabled variant="outline" size="icon">
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                </Button>
+            ): (
+                <Button variant="outline" size="sm" type="submit">
+                    <ThumbsUp className="h-4 w-4" />
+                </Button>
+            )}
+        </>
+    )
+}
+
+export function DownVote() {
+    const {pending} = useFormStatus();
+
+    return (
+        <>
+            {pending ? (
+                <Button disabled variant="outline" size="icon">
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                </Button>
+            ): (
+                <Button variant="outline" size="sm" type="submit">
+                    <ThumbsDown className="h-4 w-4" />
                 </Button>
             )}
         </>
