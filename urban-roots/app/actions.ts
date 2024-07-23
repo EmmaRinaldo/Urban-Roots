@@ -7,6 +7,7 @@ import { Prisma, TypeOfVote } from "@prisma/client";
 import { JSONContent } from "@tiptap/react";
 import { revalidatePath } from "next/cache";
 
+
 export async function updateUsername(prevState: any, formDate: FormData) {
     const {getUser} = getKindeServerSession()
     const user = await getUser()
