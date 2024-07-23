@@ -79,7 +79,7 @@ function CartePage() {
 
   return (
     <div className='mx-auto flex flex-col md:flex-row z-0'>
-      <div className="lg:w-[65%] w-full flex flex-col gap-y-5 mx-auto lg:h-[100vh] h-[50vh]">
+      <div className="lg:w-[65%] w-full flex flex-col gap-y-5 mx-auto lg:h-[80vh] h-[53vh]">
         {isClient && (
           <MapContainer
             center={[46.603354, 1.888334]}
@@ -111,7 +111,7 @@ function CartePage() {
         )}
       </div>
 
-      <div className='lg:w-[35%] w-full mx-auto mb-5'>
+      <div className='lg:w-[35%] w-full mx-auto'>
         <Tabs defaultValue='filtres' className='w-full'>
           <TabsList className="grid w-full grid-cols-2 h-full px-2">
             <TabsTrigger value='filtres' className='md:text-lg text-base'>
