@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { unstable_noStore as noStore } from "next/cache";
 
-// TODO: Ajouter une flèche retour sur subject/nom et post/id
+// TODO Ajouter une flèche retour sur subject/nom et post/id
 
 async function getData(name: string, searchParams: string) {
     noStore();
@@ -89,7 +89,7 @@ export default async function SubjectPage({
                             <FileQuestion className="h-10 w-10 text-primary" />
                         </div>
                         <h2 className="mt-6 text-xl font-semibold">
-                            Il n'y a pas de post pour le moment
+                            Il n&apos;y a pas de post pour le moment
                         </h2>
                     </div>
                 ): (
