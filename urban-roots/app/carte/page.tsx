@@ -75,7 +75,7 @@ function CartePage() {
               <Filter className='h-5 w-5 mr-2' /> Filtres
             </TabsTrigger>
             <TabsTrigger value='liste' className='md:text-lg text-base'>
-              <List className='h-5 w-5 mr-2' />Liste<span className='md:text-base text-sm ml-2'>(4173)</span>
+              <List className='h-5 w-5 mr-2' />Liste<span className='md:text-base text-sm ml-2 text-muted-foreground'>(4173)</span>
             </TabsTrigger>
           </TabsList>
 
