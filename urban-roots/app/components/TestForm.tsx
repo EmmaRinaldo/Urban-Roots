@@ -71,7 +71,7 @@ const TestForm = ({ userId }: TestFormProps) => {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="augmenter la production">Augmenter la production</SelectItem>
-              <SelectItem value="améliorer l'esthétique">Améliorer l'esthétique</SelectItem>
+              <SelectItem value="améliorer l'esthétique">Améliorer l&apos;esthétique</SelectItem>
               <SelectItem value="réduire les coûts">Réduire les coûts</SelectItem>
             </SelectContent>
           </Select>

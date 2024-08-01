@@ -48,7 +48,7 @@ export default async function TestPage() {
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
               <FileQuestion className="h-10 w-10 text-primary" />
             </div>
-            <h2 className="mt-6 text-xl font-semibold">Vous n&apos;avez pas passer le test pour l'instant</h2>
+            <h2 className="mt-6 text-xl font-semibold">Vous n&apos;avez pas passer le test pour l&apos;instant</h2>
           </div>
         )}
       </div>
