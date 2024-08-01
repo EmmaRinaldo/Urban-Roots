@@ -84,9 +84,6 @@ export default function ForumPage({
             <Separator className="my-5" />
 
             <div className="flex flex-col gap-y-3">
-              <Button variant={"secondary"}>
-                <Link href="/subject/emmarinaldo/create">Créer un Post</Link>
-              </Button>              
               <Button>
                 <Link href="/subject/create">Créer un Sujet de Discussion</Link>
               </Button>

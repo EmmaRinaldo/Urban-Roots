@@ -21,6 +21,7 @@ model User {
   lastName            String
   imageUrl            String?
   userName            String?        @unique
+  gardeningSuggestions String?
   createdSubjectForum Subjectforum[]
 
   createdAt DateTime @default(now())

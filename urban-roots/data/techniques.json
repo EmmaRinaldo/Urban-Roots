@@ -1,0 +1,212 @@
+[
+  {
+    "space": "petit",
+    "plants": "légumes",
+    "goals": "augmenter la production",
+    "soil": "limoneux",
+    "sunlight": "plein soleil",
+    "time": "1-3 heures par semaine",
+    "budget": "faible",
+    "experience": "débutant",
+    "suggestion": {
+      "title": "Jardin en Carrés",
+      "description": "Le jardin en carrés est une méthode idéale pour maximiser l'espace et augmenter la production de légumes.",
+      "tips": [
+        "Divisez votre espace en carrés de 30x30 cm.",
+        "Plantez des cultures complémentaires pour améliorer la croissance."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Comment créer un jardin en carrés",
+          "link": "https://www.youtube.com/watch?v=example1"
+        },
+        {
+          "type": "article",
+          "title": "Guide complet du jardinage en carrés",
+          "link": "https://www.example.com/article-jardin-carres"
+        }
+      ]
+    }
+  },
+  {
+    "space": "moyen",
+    "plants": "fleurs",
+    "goals": "améliorer l'esthétique",
+    "soil": "sableux",
+    "sunlight": "mi-ombre",
+    "time": "3-5 heures par semaine",
+    "budget": "moyen",
+    "experience": "intermédiaire",
+    "suggestion": {
+      "title": "Massifs de Fleurs",
+      "description": "Créer des massifs de fleurs pour un jardin coloré et esthétiquement plaisant.",
+      "tips": [
+        "Choisissez des fleurs de différentes hauteurs pour ajouter de la dimension.",
+        "Utilisez des plantes vivaces pour une floraison durable."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Conception de massifs de fleurs",
+          "link": "https://www.youtube.com/watch?v=example2"
+        },
+        {
+          "type": "article",
+          "title": "Idées de massifs de fleurs pour un beau jardin",
+          "link": "https://www.example.com/article-massifs-fleurs"
+        }
+      ]
+    }
+  },
+  {
+    "space": "grand",
+    "plants": "fruits",
+    "goals": "réduire les coûts",
+    "soil": "argileux",
+    "sunlight": "ombre",
+    "time": "5+ heures par semaine",
+    "budget": "élevé",
+    "experience": "avancé",
+    "suggestion": {
+      "title": "Verger de Fruits",
+      "description": "Un verger de fruits peut fournir des récoltes abondantes et réduire les coûts à long terme.",
+      "tips": [
+        "Sélectionnez des variétés de fruits adaptées à votre climat.",
+        "Pratiquez la taille régulière pour stimuler la production."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Planter un verger de fruits",
+          "link": "https://www.youtube.com/watch?v=example3"
+        },
+        {
+          "type": "article",
+          "title": "Guide pour créer un verger de fruits",
+          "link": "https://www.example.com/article-verger-fruits"
+        }
+      ]
+    }
+  },
+  {
+    "space": "petit",
+    "plants": "fleurs",
+    "goals": "améliorer l'esthétique",
+    "soil": "argileux",
+    "sunlight": "plein soleil",
+    "time": "1-3 heures par semaine",
+    "budget": "faible",
+    "experience": "débutant",
+    "suggestion": {
+      "title": "Jardin de Conteneurs",
+      "description": "Le jardinage en conteneurs est parfait pour les petits espaces et offre une flexibilité maximale.",
+      "tips": [
+        "Utilisez des conteneurs de différentes tailles pour ajouter de la profondeur.",
+        "Choisissez des fleurs adaptées aux conteneurs."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Guide du jardinage en conteneurs",
+          "link": "https://www.youtube.com/watch?v=example4"
+        },
+        {
+          "type": "article",
+          "title": "Les meilleures pratiques pour le jardinage en conteneurs",
+          "link": "https://www.example.com/article-jardin-conteneurs"
+        }
+      ]
+    }
+  },
+  {
+    "space": "moyen",
+    "plants": "légumes",
+    "goals": "augmenter la production",
+    "soil": "sableux",
+    "sunlight": "mi-ombre",
+    "time": "3-5 heures par semaine",
+    "budget": "moyen",
+    "experience": "intermédiaire",
+    "suggestion": {
+      "title": "Jardin en Planches",
+      "description": "Le jardinage en planches surélevées maximise l'espace de culture et améliore la gestion des sols.",
+      "tips": [
+        "Construisez des planches surélevées pour un meilleur drainage.",
+        "Utilisez du compost pour enrichir le sol."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Construire des planches surélevées",
+          "link": "https://www.youtube.com/watch?v=example5"
+        },
+        {
+          "type": "article",
+          "title": "Avantages des planches surélevées",
+          "link": "https://www.example.com/article-planches-surelevees"
+        }
+      ]
+    }
+  },
+  {
+    "space": "grand",
+    "plants": "légumes",
+    "goals": "réduire les coûts",
+    "soil": "limoneux",
+    "sunlight": "plein soleil",
+    "time": "5+ heures par semaine",
+    "budget": "élevé",
+    "experience": "avancé",
+    "suggestion": {
+      "title": "Permaculture",
+      "description": "La permaculture est une méthode durable qui vise à créer des systèmes agricoles autosuffisants.",
+      "tips": [
+        "Utilisez des techniques de compagnonnage pour améliorer la biodiversité.",
+        "Implémentez des techniques de conservation de l'eau."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Introduction à la permaculture",
+          "link": "https://www.youtube.com/watch?v=example6"
+        },
+        {
+          "type": "article",
+          "title": "Guide complet de la permaculture",
+          "link": "https://www.example.com/article-permaculture"
+        }
+      ]
+    }
+  },
+  {
+    "space": "petit",
+    "plants": "fruits",
+    "goals": "augmenter la production",
+    "soil": "argileux",
+    "sunlight": "mi-ombre",
+    "time": "1-3 heures par semaine",
+    "budget": "faible",
+    "experience": "débutant",
+    "suggestion": {
+      "title": "Jardin Vertical",
+      "description": "Le jardinage vertical permet de maximiser l'utilisation de l'espace en cultivant des plantes en hauteur.",
+      "tips": [
+        "Utilisez des treillis pour les plantes grimpantes.",
+        "Choisissez des variétés de fruits adaptées au jardinage vertical."
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Comment créer un jardin vertical",
+          "link": "https://www.youtube.com/watch?v=example7"
+        },
+        {
+          "type": "article",
+          "title": "Avantages du jardinage vertical",
+          "link": "https://www.example.com/article-jardin-vertical"
+        }
+      ]
+    }
+  }
+]
