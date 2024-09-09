@@ -48,7 +48,7 @@ export default function SubjectCreate() {
                     <Button variant="secondary" asChild>
                         <Link href="/forum">Annuler</Link>
                     </Button>
-                    <SubmitButtons text="Céer un Sujet"/>
+                    <SubmitButtons text="Créer un Sujet"/>
                 </div>
 
             </form>

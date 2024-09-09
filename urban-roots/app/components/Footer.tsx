@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Footer() {
     return(
-        <footer className="w-[100%] footer-part flex md:flex-row flex-col gap-10 justify-between items-center mt-5 px-6 sm:px-16 py-20 bottom-0 left-0 right-0 ">
+        <footer className="w-[100%] footer-part flex md:flex-row flex-col gap-10 justify-between items-center mt-5 px-6 sm:px-16 py-10 bottom-0 left-0 right-0 ">
             
             <div className="flex">
                 <Link href="/">
@@ -22,9 +22,6 @@ export function Footer() {
                 </Link>
                 <Link href="/forum" className="underline sm:mt-15 font-semibold">
                 FORUM
-                </Link>
-                <Link href="/quide" className="underline sm:mt-15 font-semibold">
-                GUIDES JARDINAGE
                 </Link>
                 <Link href="/politique-de-confidentialite" className="underline sm:mt-15 font-semibold">
                 POLITIQUE DE CONFIDENTIALITÉ

@@ -77,11 +77,13 @@ export default async function SubjectPage({
     const {getUser} = getKindeServerSession();
     const user = await getUser();
 
+    const projectName = data?.name || '';
+
     return(
         <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row gap-x-10 mt-4 lg:px-0 px:5 mb-10">
 
             <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 order-2 md:order-1 mx-auto">
-                <CreatePostCard />
+                <CreatePostCard projectname={projectName} />
 
                 {data?.posts.length === 0 ? (
                     <div className="flex min-h-[300px] justify-center flex-col items-center rounded-md border border-dashed p-8 text-center">

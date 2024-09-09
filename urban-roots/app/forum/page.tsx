@@ -12,13 +12,16 @@ import { Suspense } from "react";
 import { SuspenseCard } from "../components/SuspenseCard";
 import Pagination from "../components/Pagination";
 import {unstable_noStore as noStore} from "next/cache";
+import { FileQuestion } from "lucide-react";
 
 async function getData(searchParams: string) {
   noStore();
-  const [count, data] = await prisma.$transaction([
+
+
+  const [count, data, subjectforum] = await prisma.$transaction([
     prisma.post.count(),
     prisma.post.findMany({
-      take: 10, // TODO: Après la création de post changer la pagination pour 10
+      take: 10,
       skip: searchParams ? (Number(searchParams) - 1) * 10 : 0,
       select: {
         title: true,
@@ -49,22 +52,31 @@ async function getData(searchParams: string) {
         createdAt: "desc",
       },
     }),
+    prisma.subjectforum.findMany({
+      select: {
+        id: true,
+        name:true,
+        createdAt: true,
+      }
+    })
   ]);
 
-  return {data, count};
+  
+  return {data, count, subjectforum};
 }
 
-export default function ForumPage({
+export default async function ForumPage({
     searchParams
 }: {
   searchParams: {page: string};
 }) {
 
+  const { subjectforum } = await getData(searchParams.page);
+
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row gap-x-10 mt-4 mb-10">
 
       <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 order-2 md:order-1 mx-auto">
-        <CreatePostCard />
         <Suspense fallback={<SuspenseCard />} key={searchParams.page}>
           <ShowItems searchParams={searchParams} />
         </Suspense>
@@ -87,10 +99,44 @@ export default function ForumPage({
               <Button>
                 <Link href="/subject/create">Créer un Sujet de Discussion</Link>
               </Button>
-            </div>             
+            </div>   
+       
           </div>
         </Card>
+
+        <Card className="mt-5">
+          <div className="p-2">
+            <div className="flex items-center">
+              <h1 className="font-medium pl-3">Sujets de Discussions</h1>
+            </div>
+            <p className="text-sm text-muted-foreground pt-2">
+              Voici tous nos sujet de discussions actuelles
+            </p>
+            <Separator className="my-5" />
+            {subjectforum?.length === 0 ? (
+
+              <p className="text-sm text-muted-foreground pt-2">Aucun sujet à afficher</p>
+
+            ): (
+
+              <ul className="list-none p-0">
+                {subjectforum.map((subject: any) => (
+                  <li key={subject.id} className="py-1">
+                    <Link href={`/subject/${subject.name}`} className="text-sm text-muted-foreground hover:underline hover:text-primary">
+                      {subject.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+            )}  
+       
+          </div>
+        </Card>
+
       </div>
+
+      
         
     </div>
   );
@@ -102,25 +148,32 @@ async function ShowItems({
 searchParams: {page: string};
 }) {
   const {count, data} = await getData(searchParams.page);
+
+  // Ajout d'une vérification pour les données nulles ou vides
+  if (!data || data.length === 0) {
+    return <p>Aucun post à afficher</p>; // Gérer le cas où les données sont nulles ou vides
+  }
+
+
   return (
     <>
       {data.map((post) => (
           <PostCard
             id={post.id}
             imageString={post.imageString}
-            jsonContent={post.textContent}
+            jsonContent={post.textContent ?? {}}
             subjectName={post.subjectName as string}
             title={post.title}
             key={post.id}
-            commentAmount={post.Comment.length}
-            userName={post.User?.userName as string}
+            commentAmount={post.Comment.length || 0 }
+            userName={post.User?.userName || 'Utilisateur inconnu'}
             voteCount={
               post.Vote.reduce((acc, vote) => {
                 if(vote.voteType === "UP") return acc + 1;
                 if(vote.voteType === "DOWN") return acc - 1;
 
                 return acc;
-              }, 0)
+              }, 0) || 0
             }
           />
         )

@@ -30,14 +30,6 @@ export function NavDropdown() {
             <DropdownMenuSeparator />
 
             <DropdownMenuItem>
-                <Link href="/guides" className="w-full">
-                    Guides Jardinages
-                </Link>
-            </DropdownMenuItem>
-
-            <DropdownMenuSeparator />
-
-            <DropdownMenuItem>
                 <Button variant={"secondary"} asChild className="w-full">
                     <RegisterLink>S&apos;inscrire</RegisterLink>
                 </Button>

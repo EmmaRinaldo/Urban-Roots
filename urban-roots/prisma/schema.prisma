@@ -86,3 +86,15 @@ model Comment {
   Post   Post?   @relation(fields: [postId], references: [id])
   postId String?
 }
+
+
+model Plant {
+  id           Int       @id @default(autoincrement())
+  name         String
+  climate      String[]
+  soilType     String[]
+  sunExposure  String
+  maintenance  Int
+  interests    String[]
+  guideLink    String
+}

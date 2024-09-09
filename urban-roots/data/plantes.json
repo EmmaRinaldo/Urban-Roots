@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 1,
+    "name": "Lavande",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers"],
+    "guideLink": "link_to_guide_lavande"
+  },
+  {
+    "id": 2,
+    "name": "Tomate",
+    "climate": ["tropical", "temperate"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_tomate"
+  },
+  {
+    "id": 3,
+    "name": "Aloe Vera",
+    "climate": ["arid", "tropical"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents"],
+    "guideLink": "link_to_guide_aloe_vera"
+  },
+  {
+    "id": 4,
+    "name": "Fougère",
+    "climate": ["temperate", "tropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "shade",
+    "maintenance": 2,
+    "interests": ["foliage"],
+    "guideLink": "link_to_guide_ferns"
+  },
+  {
+    "id": 5,
+    "name": "Pommier",
+    "climate": ["temperate"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_pommier"
+  },
+  {
+    "id": 6,
+    "name": "Chêne",
+    "climate": ["temperate"],
+    "soilType": ["loamy", "clay", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 3,
+    "interests": ["trees"],
+    "guideLink": "link_to_guide_chene"
+  },
+  {
+    "id": 7,
+    "name": "Pensée",
+    "climate": ["temperate"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["flowers"],
+    "guideLink": "link_to_guide_pensee"
+  },
+  {
+    "id": 8,
+    "name": "Banane",
+    "climate": ["tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_banane"
+  },
+  {
+    "id": 9,
+    "name": "Hibiscus",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "peaty", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers"],
+    "guideLink": "link_to_guide_hibiscus"
+  },
+  {
+    "id": 10,
+    "name": "Palmier",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["trees", "tropical plants"],
+    "guideLink": "link_to_guide_palmier"
+  },
+  {
+    "id": 11,
+    "name": "Cactus",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_cactus"
+  },
+  {
+    "id": 12,
+    "name": "Agave",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_agave"
+  },
+  {
+    "id": 13,
+    "name": "Érable",
+    "climate": ["continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees"],
+    "guideLink": "link_to_guide_erable"
+  },
+  {
+    "id": 14,
+    "name": "Sapin",
+    "climate": ["continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees"],
+    "guideLink": "link_to_guide_sapin"
+  },
+  {
+    "id": 15,
+    "name": "Bougainvillier",
+    "climate": ["subtropical", "tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "climbing plants"],
+    "guideLink": "link_to_guide_bougainvillier"
+  },
+  {
+    "id": 16,
+    "name": "Jasmin",
+    "climate": ["subtropical", "tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "fragrant plants"],
+    "guideLink": "link_to_guide_jasmin"
+  },
+  {
+    "id": 17,
+    "name": "Châtaignier",
+    "climate": ["continental", "temperate"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "fruit trees"],
+    "guideLink": "link_to_guide_chataignier"
+  },
+  {
+    "id": 18,
+    "name": "Rosier",
+    "climate": ["continental", "temperate"],
+    "soilType": ["loamy", "clay", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_rosier"
+  },
+  {
+    "id": 19,
+    "name": "Romarin",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_romarin"
+  },
+  {
+    "id": 20,
+    "name": "Olive",
+    "climate": ["mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees", "trees"],
+    "guideLink": "link_to_guide_olive"
+  },
+  {
+    "id": 21,
+    "name": "Yucca",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_yucca"
+  },
+  {
+    "id": 22,
+    "name": "Laurier-rose",
+    "climate": ["arid", "mediterranean"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_laurier_rose"
+  },
+  {
+    "id": 23,
+    "name": "Canneberge",
+    "climate": ["temperate", "continental"],
+    "soilType": ["peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_canneberge"
+  },
+  {
+    "id": 24,
+    "name": "Myrtille",
+    "climate": ["temperate", "continental"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["fruit trees", "bushes"],
+    "guideLink": "link_to_guide_myrtille"
+  },
+  {
+    "id": 25,
+    "name": "Poivron",
+    "climate": ["tropical", "subtropical", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_poivron"
+  },
+  {
+    "id": 26,
+    "name": "Épinard",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_epinard"
+  },
+  {
+    "id": 27,
+    "name": "Clématite",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "climbing plants"],
+    "guideLink": "link_to_guide_clematite"
+  },
+  {
+    "id": 28,
+    "name": "Calendula",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_calendula"
+  },
+  {
+    "id": 29,
+    "name": "Menthe",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_menthe"
+  },
+  {
+    "id": 30,
+    "name": "Lavande des Jardins",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_lavande_des_jardins"
+  },
+  {
+    "id": 31,
+    "name": "Laurier-Sauce",
+    "climate": ["mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["trees", "herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_laurier_sauce"
+  },
+  {
+    "id": 32,
+    "name": "Origan",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_origan"
+  },
+  {
+    "id": 33,
+    "name": "Thyme",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_thyme"
+  },
+  {
+    "id": 34,
+    "name": "Mûre Sauvage",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["fruit trees", "bushes"],
+    "guideLink": "link_to_guide_mure_sauvage"
+  },
+  {
+    "id": 35,
+    "name": "Lavande du Désert",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "low maintenance"],
+    "guideLink": "link_to_guide_lavande_du_desert"
+  },
+  {
+    "id": 36,
+    "name": "Euphorbe",
+    "climate": ["arid", "semi-arid", "mediterranean"],
+    "soilType": ["sandy", "rocky", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_euphorbe"
+  },
+  {
+    "id": 37,
+    "name": "Bouleau",
+    "climate": ["arid", "semi-arid", "temperate"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "foliage"],
+    "guideLink": "link_to_guide_bouleau"
+  },
+  {
+    "id": 38,
+    "name": "Passiflore",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "climbing plants"],
+    "guideLink": "link_to_guide_passiflore"
+  },
+  {
+    "id": 39,
+    "name": "Banian",
+    "climate": ["tropical"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 3,
+    "interests": ["trees", "tropical plants"],
+    "guideLink": "link_to_guide_banian"
+  },
+  {
+    "id": 40,
+    "name": "Papaye",
+    "climate": ["tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees", "tropical plants"],
+    "guideLink": "link_to_guide_papaye"
+  },
+  {
+    "id": 41,
+    "name": "Glycine",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["climbing plants", "flowers"],
+    "guideLink": "link_to_guide_glycine"
+  },
+  {
+    "id": 42,
+    "name": "Lavande papillon",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_lavande_papillon"
+  },
+  {
+    "id": 43,
+    "name": "Tournesol",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_tournesol"
+  },
+  {
+    "id": 44,
+    "name": "Chardon bleu",
+    "climate": ["arid", "semi-arid", "mediterranean"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "low maintenance"],
+    "guideLink": "link_to_guide_chardon_bleu"
+  },
+  {
+    "id": 45,
+    "name": "Figuier",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_figuier"
+  },
+  {
+    "id": 46,
+    "name": "Aneth",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_aneth"
+  },
+  {
+    "id": 47,
+    "name": "Basilic",
+    "climate": ["mediterranean", "tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_basilic"
+  },
+  {
+    "id": 48,
+    "name": "Bambou",
+    "climate": ["subtropical", "tropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "ornamental plants"],
+    "guideLink": "link_to_guide_bambou"
+  },
+  {
+    "id": 49,
+    "name": "Rhubarbe",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_rhubarbe"
+  },
+  {
+    "id": 50,
+    "name": "Menthe poivrée",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_menthe_poivree"
+  },
+  {
+    "id": 51,
+    "name": "Lupin",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_lupin"
+  },
+  {
+    "id": 52,
+    "name": "Géranium",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_geranium"
+  },
+  {
+    "id": 53,
+    "name": "Ananas",
+    "climate": ["tropical"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees", "tropical plants"],
+    "guideLink": "link_to_guide_ananas"
+  },
+  {
+    "id": 54,
+    "name": "Mûrier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_murier"
+  },
+  {
+    "id": 55,
+    "name": "Tilleul",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "medicinal plants"],
+    "guideLink": "link_to_guide_tilleul"
+  },
+  {
+    "id": 56,
+    "name": "Hortensia",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_hortensia"
+  },
+  {
+    "id": 57,
+    "name": "Magnolia",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "ornamental plants"],
+    "guideLink": "link_to_guide_magnolia"
+  },
+  {
+    "id": 58,
+    "name": "Saule",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees"],
+    "guideLink": "link_to_guide_saule"
+  },
+  {
+    "id": 59,
+    "name": "Citronnier",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_citronnier"
+  },
+  {
+    "id": 60,
+    "name": "Olivier de Bohème",
+    "climate": ["mediterranean", "continental"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["trees", "ornamental plants"],
+    "guideLink": "link_to_guide_olivier_de_boheme"
+  },
+  {
+    "id": 61,
+    "name": "Cerise de terre",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_cerise_de_terre"
+  },
+  {
+    "id": 62,
+    "name": "Abricotier",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_abricotier"
+  },
+  {
+    "id": 63,
+    "name": "Arbre à papillons",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["ornamental plants", "trees"],
+    "guideLink": "link_to_guide_arbre_a_papillons"
+  },
+  {
+    "id": 64,
+    "name": "Bougainvillier nain",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_bougainvillier_nain"
+  },
+  {
+    "id": 65,
+    "name": "Céleri",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_celeri"
+  },
+  {
+    "id": 66,
+    "name": "Ciboulette",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs"],
+    "guideLink": "link_to_guide_ciboulette"
+  },
+  {
+    "id": 67,
+    "name": "Groseillier à maquereau",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["fruit trees", "bushes"],
+    "guideLink": "link_to_guide_groseillier_a_maquereau"
+  },
+  {
+    "id": 68,
+    "name": "Noisetier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "fruit trees"],
+    "guideLink": "link_to_guide_noisetier"
+  },
+  {
+    "id": 69,
+    "name": "Cyclamen",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_cyclamen"
+  },
+  {
+    "id": 70,
+    "name": "Chou de Bruxelles",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_chou_de_bruxelles"
+  },
+  {
+    "id": 71,
+    "name": "Carotte",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_carotte"
+  },
+  {
+    "id": 72,
+    "name": "Pastèque",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_pasteque"
+  },
+  {
+    "id": 73,
+    "name": "Grenadier",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_grenadier"
+  },
+  {
+    "id": 74,
+    "name": "Bleuet",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_bleuet"
+  },
+  {
+    "id": 75,
+    "name": "Orchidée",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 3,
+    "interests": ["flowers", "tropical plants"],
+    "guideLink": "link_to_guide_orchidee"
+  },
+  {
+    "id": 76,
+    "name": "Ricin",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["ornamental plants", "medicinal plants"],
+    "guideLink": "link_to_guide_ricin"
+  },
+  {
+    "id": 77,
+    "name": "Eucalyptus",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "medicinal plants"],
+    "guideLink": "link_to_guide_eucalyptus"
+  },
+  {
+    "id": 78,
+    "name": "Romarin rampant",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_romarin_rampant"
+  },
+  {
+    "id": 79,
+    "name": "Ficus",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "tropical plants"],
+    "guideLink": "link_to_guide_ficus"
+  },
+  {
+    "id": 80,
+    "name": "Gladiolus",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_gladiolus"
+  },
+  {
+    "id": 81,
+    "name": "Laurier tin",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["trees", "ornamental plants"],
+    "guideLink": "link_to_guide_laurier_tin"
+  },
+  {
+    "id": 82,
+    "name": "Pavot",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_pavot"
+  },
+  {
+    "id": 83,
+    "name": "Églantier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "bushes"],
+    "guideLink": "link_to_guide_eglantier"
+  },
+  {
+    "id": 84,
+    "name": "Petunia",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_petunia"
+  },
+  {
+    "id": 85,
+    "name": "Freesia",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_freesia"
+  },
+  {
+    "id": 86,
+    "name": "Amaryllis",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_amaryllis"
+  },
+  {
+    "id": 87,
+    "name": "Cannabis",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["medicinal plants"],
+    "guideLink": "link_to_guide_cannabis"
+  },
+  {
+    "id": 88,
+    "name": "Begonia",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_begonia"
+  },
+  {
+    "id": 89,
+    "name": "Salvia",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_salvia"
+  },
+  {
+    "id": 90,
+    "name": "Alstroemeria",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_alstroemeria"
+  },
+  {
+    "id": 91,
+    "name": "Narcissus",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_narcissus"
+  },
+  {
+    "id": 92,
+    "name": "Lierre grimpant",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["climbing plants", "ornamental plants"],
+    "guideLink": "link_to_guide_lierre_grimpant"
+  },
+  {
+    "id": 93,
+    "name": "Ginkgo biloba",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "medicinal plants"],
+    "guideLink": "link_to_guide_ginkgo_biloba"
+  },
+  {
+    "id": 94,
+    "name": "Framboisier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees", "bushes"],
+    "guideLink": "link_to_guide_framboisier"
+  },
+  {
+    "id": 95,
+    "name": "Crocus",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_crocus"
+  },
+  {
+    "id": 96,
+    "name": "Poireau",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_poireau"
+  },
+  {
+    "id": 97,
+    "name": "Arum",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_arum"
+  },
+  {
+    "id": 98,
+    "name": "Melon",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_melon"
+  },
+  {
+    "id": 99,
+    "name": "Dahlia",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_dahlia"
+  },
+  {
+    "id": 100,
+    "name": "Fougère de Boston",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["foliage", "tropical plants"],
+    "guideLink": "link_to_guide_fougere_boston"
+  },
+  {
+    "id": 101,
+    "name": "Aster",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_aster"
+  },
+  {
+    "id": 102,
+    "name": "Caladium",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["foliage", "ornamental plants"],
+    "guideLink": "link_to_guide_caladium"
+  },
+  {
+    "id": 103,
+    "name": "Lantana",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_lantana"
+  },
+  {
+    "id": 104,
+    "name": "Chrysanthème",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_chrysantheme"
+  },
+  {
+    "id": 105,
+    "name": "Coleus",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["foliage", "ornamental plants"],
+    "guideLink": "link_to_guide_coleus"
+  },
+  {
+    "id": 106,
+    "name": "Curry Plant",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_curry_plant"
+  },
+  {
+    "id": 107,
+    "name": "Echinacée",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_echinacee"
+  },
+  {
+    "id": 108,
+    "name": "Fougère mâle",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "shade",
+    "maintenance": 1,
+    "interests": ["foliage", "ornamental plants"],
+    "guideLink": "link_to_guide_fougere_male"
+  },
+  {
+    "id": 109,
+    "name": "Lys des Incas",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_lys_des_incas"
+  },
+  {
+    "id": 110,
+    "name": "Impatiens",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_impatiens"
+  },
+  {
+    "id": 111,
+    "name": "Jonc",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["foliage", "low maintenance"],
+    "guideLink": "link_to_guide_jonc"
+  },
+  {
+    "id": 112,
+    "name": "Kalanchoe",
+    "climate": ["arid", "tropical"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_kalanchoe"
+  },
+  {
+    "id": 113,
+    "name": "Lavande anglaise",
+    "climate": ["temperate", "continental"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_lavande_anglaise"
+  },
+  {
+    "id": 114,
+    "name": "Lilas",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "trees"],
+    "guideLink": "link_to_guide_lilas"
+  },
+  {
+    "id": 115,
+    "name": "Maïs",
+    "climate": ["temperate", "tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_mais"
+  },
+  {
+    "id": 116,
+    "name": "Mandevilla",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "climbing plants"],
+    "guideLink": "link_to_guide_mandevilla"
+  },
+  {
+    "id": 117,
+    "name": "Marguerite",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_marguerite"
+  },
+  {
+    "id": 118,
+    "name": "Menthe verte",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_menthe_verte"
+  },
+  {
+    "id": 119,
+    "name": "Monarde",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_monarde"
+  },
+  {
+    "id": 120,
+    "name": "Myrte",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "medicinal plants"],
+    "guideLink": "link_to_guide_myrte"
+  },
+  {
+    "id": 121,
+    "name": "Oignon",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_oignon"
+  },
+  {
+    "id": 122,
+    "name": "Palmier nain",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["trees", "tropical plants"],
+    "guideLink": "link_to_guide_palmier_nain"
+  },
+  {
+    "id": 123,
+    "name": "Pâquerette",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_paquerette"
+  },
+  {
+    "id": 124,
+    "name": "Passiflore bleue",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "climbing plants"],
+    "guideLink": "link_to_guide_passiflore_bleue"
+  },
+  {
+    "id": 125,
+    "name": "Persil",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_persil"
+  },
+  {
+    "id": 126,
+    "name": "Physalis",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_physalis"
+  },
+  {
+    "id": 127,
+    "name": "Poirier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_poirier"
+  },
+  {
+    "id": 128,
+    "name": "Pommetier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["trees", "fruit trees"],
+    "guideLink": "link_to_guide_pommetier"
+  },
+  {
+    "id": 129,
+    "name": "Prunier",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["fruit trees"],
+    "guideLink": "link_to_guide_prunier"
+  },
+  {
+    "id": 130,
+    "name": "Raphiolepis",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["shrubs", "ornamental plants"],
+    "guideLink": "link_to_guide_raphiolepis"
+  },
+  {
+    "id": 131,
+    "name": "Renoncule",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_renoncule"
+  },
+  {
+    "id": 132,
+    "name": "Ricin commun",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["ornamental plants", "medicinal plants"],
+    "guideLink": "link_to_guide_ricin_commun"
+  },
+  {
+    "id": 133,
+    "name": "Rose trémière",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_rose_tremiere"
+  },
+  {
+    "id": 134,
+    "name": "Rosier sauvage",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["flowers", "bushes"],
+    "guideLink": "link_to_guide_rosier_sauvage"
+  },
+  {
+    "id": 135,
+    "name": "Sapin de Corée",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["trees", "ornamental plants"],
+    "guideLink": "link_to_guide_sapin_de_coree"
+  },
+  {
+    "id": 136,
+    "name": "Sauge officinale",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_sauge_officinale"
+  },
+  {
+    "id": 137,
+    "name": "Scabieuse",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_scabieuse"
+  },
+  {
+    "id": 138,
+    "name": "Séneçon de Rowley",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_senecon_de_rowley"
+  },
+  {
+    "id": 139,
+    "name": "Tamaris",
+    "climate": ["mediterranean", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["shrubs", "ornamental plants"],
+    "guideLink": "link_to_guide_tamaris"
+  },
+  {
+    "id": 140,
+    "name": "Thym citron",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_thym_citron"
+  },
+  {
+    "id": 141,
+    "name": "Troène du Japon",
+    "climate": ["temperate", "subtropical"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["shrubs", "ornamental plants"],
+    "guideLink": "link_to_guide_troene_du_japon"
+  },
+  {
+    "id": 142,
+    "name": "Tulipe",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_tulipe"
+  },
+  {
+    "id": 143,
+    "name": "Valériane",
+    "climate": ["temperate", "mediterranean"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "medicinal plants"],
+    "guideLink": "link_to_guide_valeriane"
+  },
+  {
+    "id": 144,
+    "name": "Verveine citronnelle",
+    "climate": ["mediterranean", "temperate"],
+    "soilType": ["sandy", "loamy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_verveine_citronnelle"
+  },
+  {
+    "id": 145,
+    "name": "Vigne vierge",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "clay"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["climbing plants", "ornamental plants"],
+    "guideLink": "link_to_guide_vigne_vierge"
+  },
+  {
+    "id": 146,
+    "name": "Yucca filamentosa",
+    "climate": ["arid", "semi-arid"],
+    "soilType": ["sandy", "rocky"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["succulents", "low maintenance"],
+    "guideLink": "link_to_guide_yucca_filamentosa"
+  },
+  {
+    "id": 147,
+    "name": "Zinnia",
+    "climate": ["temperate", "tropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 1,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_zinnia"
+  },
+  {
+    "id": 148,
+    "name": "Ail des ours",
+    "climate": ["temperate", "continental"],
+    "soilType": ["loamy", "peaty"],
+    "sunExposure": "partial shade",
+    "maintenance": 1,
+    "interests": ["herbs", "medicinal plants"],
+    "guideLink": "link_to_guide_ail_des_ours"
+  },
+  {
+    "id": 149,
+    "name": "Aubergine",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["loamy", "sandy"],
+    "sunExposure": "full sun",
+    "maintenance": 2,
+    "interests": ["vegetables"],
+    "guideLink": "link_to_guide_aubergine"
+  },
+  {
+    "id": 150,
+    "name": "Bégonia tubéreux",
+    "climate": ["tropical", "subtropical"],
+    "soilType": ["peaty", "loamy"],
+    "sunExposure": "partial shade",
+    "maintenance": 2,
+    "interests": ["flowers", "ornamental plants"],
+    "guideLink": "link_to_guide_begonia_tubereux"
+  }
+]

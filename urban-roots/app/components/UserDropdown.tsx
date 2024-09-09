@@ -55,14 +55,6 @@ export function UserDropdown({ userImage }: iAppProps ) {
             <DropdownMenuSeparator />
 
             <DropdownMenuItem>
-                <Link href="/guides" className="w-full">
-                    Guides Jardinages
-                </Link>
-            </DropdownMenuItem>
-
-            <DropdownMenuSeparator />
-
-            <DropdownMenuItem>
                 <Link href="/settings" className="w-full">
                     Paramètres
                 </Link>
