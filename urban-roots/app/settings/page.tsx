@@ -3,6 +3,7 @@ import prisma from "../lib/db";
 import { redirect } from "next/navigation";
 import { SettingsForm } from "../components/SettingsForm";
 import {unstable_noStore as noStore} from "next/cache";
+import { Separator } from "@/components/ui/separator";
 
 async function getData(userId: string) {
   noStore();
@@ -31,6 +32,7 @@ export default async function SettingsPage() {
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col mt-4">
       <SettingsForm username={data?.userName}/>
+      <Separator className="my-4" />
     </div>
   );
 }

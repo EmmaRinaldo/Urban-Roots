@@ -14,8 +14,6 @@ export default function Home() {
       <Separator />
       <SectionCarte />
       <Separator />
-      <SectionRessources />
-      <Separator />
 
     </>
   );
