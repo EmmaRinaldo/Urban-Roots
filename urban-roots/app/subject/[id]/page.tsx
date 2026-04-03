@@ -16,16 +16,14 @@ import { unstable_noStore as noStore } from "next/cache";
 
 async function getData(name: string, searchParams: string) {
     noStore();
-    const [count, data] = await prisma.$transaction([
-        prisma.post.count({
-            where: {
-                subjectName: name,
-            }
-        }),
-        prisma.subjectforum.findUnique({
-            where: {
-                name: name,
-            },
+    const decodedName = decodeURIComponent(name);
+    const count = await prisma.post.count({
+        where: { subjectName: decodedName }
+    });
+    const data = await prisma.subjectforum.findUnique({
+        where: {
+            name: decodedName,
+        },
             select: {
                 name: true,
                 description: true,
@@ -58,9 +56,8 @@ async function getData(name: string, searchParams: string) {
                     },
                 },
             },
-        }),
-    ]);
-    
+        });
+
 
     return {data, count};
 }

@@ -18,50 +18,27 @@ async function getData(searchParams: string) {
   noStore();
 
 
-  const [count, data, subjectforum] = await prisma.$transaction([
-    prisma.post.count(),
-    prisma.post.findMany({
-      take: 10,
-      skip: searchParams ? (Number(searchParams) - 1) * 10 : 0,
-      select: {
-        title: true,
-        createdAt: true,
-        textContent: true,
-        id: true,
-        imageString: true,
-        Comment: {
-          select: {
-            id: true,
-          },
-        },
-        User: {
-          select: {
-            userName: true,
-          },
-        },
-        subjectName: true,
-        Vote: {
-          select: {
-            userId: true,
-            voteType: true,
-            postId: true,
-          },
-        },
-      },
-      orderBy: {
-        createdAt: "desc",
-      },
-    }),
-    prisma.subjectforum.findMany({
-      select: {
-        id: true,
-        name:true,
-        createdAt: true,
-      }
-    })
-  ]);
+  const count = await prisma.post.count();
+  const data = await prisma.post.findMany({
+    take: 10,
+    skip: searchParams ? (Number(searchParams) - 1) * 10 : 0,
+    select: {
+      title: true,
+      createdAt: true,
+      textContent: true,
+      id: true,
+      imageString: true,
+      Comment: { select: { id: true } },
+      User: { select: { userName: true } },
+      subjectName: true,
+      Vote: { select: { userId: true, voteType: true, postId: true } },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+  const subjectforum = await prisma.subjectforum.findMany({
+    select: { id: true, name: true, createdAt: true }
+  });
 
-  
   return {data, count, subjectforum};
 }
 
