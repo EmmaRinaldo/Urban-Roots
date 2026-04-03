@@ -15,6 +15,7 @@ import { UploadDropzone } from "@/app/components/Uploadthing";
 import { useState } from "react";
 import { createPost } from "@/app/actions";
 import { JSONContent } from "@tiptap/react";
+import { useParams } from "next/navigation";
 
 const rules = [
     {
@@ -39,11 +40,10 @@ const rules = [
     }
 ];
 
-export default function CreatePostRoute({
-    params,
-}: {
-    params: {id: string};
-}) {
+export default function CreatePostRoute() {
+
+    const params = useParams<{ id: string }>();
+    const subjectId = decodeURIComponent(params?.id ?? "");
 
     const [imageUrl, setImageUrl] = useState<null | string>(null);
     const [json, setJson] = useState<null | JSONContent>(null);
@@ -57,7 +57,7 @@ export default function CreatePostRoute({
             <div className="lg:w-[65%] w-[90%] flex flex-col gap-y-5 order-2 md:order-1 mx-auto">
                 <h1 className="font-semibold">
                     Sujet de discussion:{" "}
-                    <Link className="text-primary" href={`/subject/${params.id}`}>{params.id}</Link>
+                    <Link className="text-primary" href={`/subject/${subjectId}`}>{subjectId}</Link>
                 </h1>
                 <Tabs defaultValue="post" className="w-full">
                     <TabsList className="grid w-full grid-cols-2">
@@ -68,7 +68,7 @@ export default function CreatePostRoute({
                         <Card>
                             <form action={createPostSubject}>
                                 <input type="hidden" name="imageUrl" value={imageUrl ?? undefined}/>
-                                <input type="hidden" name="subjectName" value={params.id}/>
+                                <input type="hidden" name="subjectName" value={subjectId}/>
                                 <CardHeader>
                                     <Label>Titre</Label>
                                     <Input 
