@@ -90,7 +90,7 @@ export async function updateSujetDescription(prevState: any, formData: FormData)
     }
 
     try {
-        const projectName = formData.get("projectName") as string;
+        const projectName = decodeURIComponent(formData.get("projectName") as string);
         const description = formData.get("description") as string;
 
         await prisma.subjectforum.update({

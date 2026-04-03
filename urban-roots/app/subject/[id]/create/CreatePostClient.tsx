@@ -74,10 +74,14 @@ export function CreatePostClient({ subjectId }: { subjectId: string }) {
                                         className="ut-button:bg-primary ut-button:ut-readying:bg-primary/50 ut-label:text-primary ut-button:ut-uploading:bg-primary/50 ut-button:ut-uploading:after:bg-primary"
                                         endpoint="imageUploader"
                                         onClientUploadComplete={(res) => {
-                                            setImageUrl(res[0].url)
+                                            console.log("Upload complete", res);
+                                            if (res && res[0]?.url) {
+                                                setImageUrl(res[0].url);
+                                            }
                                         }}
                                         onUploadError={(error: Error) => {
-                                            alert('Erreur lors du téléchargement de l\'image');
+                                            console.error("Upload error", error);
+                                            alert('Erreur lors du téléchargement de l\'image: ' + error.message);
                                         }}
                                     />
                                 ) : (
