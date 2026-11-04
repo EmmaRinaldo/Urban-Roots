@@ -13,6 +13,7 @@ import { SuspenseCard } from "../components/SuspenseCard";
 import Pagination from "../components/Pagination";
 import {unstable_noStore as noStore} from "next/cache";
 import { FileQuestion } from "lucide-react";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 async function getData(searchParams: string) {
   noStore();
@@ -31,6 +32,7 @@ async function getData(searchParams: string) {
       Comment: { select: { id: true } },
       User: { select: { userName: true } },
       subjectName: true,
+      userId: true,
       Vote: { select: { userId: true, voteType: true, postId: true } },
     },
     orderBy: { createdAt: "desc" },
@@ -125,6 +127,8 @@ async function ShowItems({
 searchParams: {page: string};
 }) {
   const {count, data} = await getData(searchParams.page);
+  const {getUser} = getKindeServerSession();
+  const user = await getUser();
 
   // Ajout d'une vérification pour les données nulles ou vides
   if (!data || data.length === 0) {
@@ -144,6 +148,7 @@ searchParams: {page: string};
             key={post.id}
             commentAmount={post.Comment.length || 0 }
             userName={post.User?.userName || 'Utilisateur inconnu'}
+            isOwner={!!user && post.userId === user.id}
             voteCount={
               post.Vote.reduce((acc, vote) => {
                 if(vote.voteType === "UP") return acc + 1;

@@ -6,6 +6,7 @@ import { CopyLink } from "./CopyLink";
 import { handleVote } from "../actions";
 import { DownVote, UpVote } from "./SubmitButtons";
 import { RenderToJson } from "./RendertoJson";
+import { DeletePostButton } from "./DeletePostButton";
 
 interface iAppProps {
     title: string;
@@ -16,9 +17,10 @@ interface iAppProps {
     imageString: string | null;
     voteCount: number;
     commentAmount: number;
+    isOwner?: boolean;
 }
 
-export function PostCard({id, imageString, jsonContent, subjectName, title, userName, voteCount, commentAmount,}: iAppProps) {
+export function PostCard({id, imageString, jsonContent, subjectName, title, userName, voteCount, commentAmount, isOwner}: iAppProps) {
     return(
         <Card className="flex relative overflow-hidden">
             <div className="flex flex-col items-center gap-y-2 bg-muted p-2">
@@ -67,6 +69,7 @@ export function PostCard({id, imageString, jsonContent, subjectName, title, user
                         </p>
                     </div>
                     <CopyLink id={id} />
+                    {isOwner && <DeletePostButton postId={id} />}
                 </div>
             </div>
         </Card>

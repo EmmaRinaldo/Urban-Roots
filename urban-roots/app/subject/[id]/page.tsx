@@ -42,6 +42,7 @@ async function getData(name: string, searchParams: string) {
                         imageString: true,
                         id: true,
                         textContent: true,
+                        userId: true,
                         Vote: {
                             select: {
                                 userId: true,
@@ -102,6 +103,7 @@ export default async function SubjectPage({
                             commentAmount={post.Comment.length}
                             title={post.title}
                             userName={post.User?.userName as string}
+                            isOwner={!!user && post.userId === user.id}
                             jsonContent={post.textContent}
                             voteCount={
                                 post.Vote.reduce((acc, vote) => {

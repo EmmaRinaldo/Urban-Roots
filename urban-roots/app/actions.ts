@@ -214,3 +214,38 @@ export async function createComment(formData: FormData) {
   
     revalidatePath(`/post/${postId}`);
   }
+
+export async function deletePost(formData: FormData) {
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();
+
+    if (!user) {
+        return redirect("/api/auth/login");
+    }
+
+    const postId = formData.get("postId") as string;
+    const redirectTo = formData.get("redirectTo") as string | null;
+
+    const post = await prisma.post.findUnique({
+        where: { id: postId },
+        select: { userId: true, subjectName: true },
+    });
+
+    if (!post || post.userId !== user.id) {
+        throw new Error("Non autorisé");
+    }
+
+    // MongoDB : pas de cascade, on supprime votes et commentaires à la main
+    await prisma.vote.deleteMany({ where: { postId } });
+    await prisma.comment.deleteMany({ where: { postId } });
+    await prisma.post.delete({ where: { id: postId } });
+
+    revalidatePath("/forum");
+    if (post.subjectName) {
+        revalidatePath(`/subject/${post.subjectName}`);
+    }
+
+    if (redirectTo) {
+        return redirect(redirectTo);
+    }
+}

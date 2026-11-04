@@ -1,6 +1,8 @@
 import { handleVote } from "@/app/actions";
 import { CommentForm } from "@/app/components/CommentForm";
 import { CopyLink } from "@/app/components/CopyLink";
+import { DeletePostButton } from "@/app/components/DeletePostButton";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { RenderToJson } from "@/app/components/RendertoJson";
 import { DownVote, UpVote } from "@/app/components/SubmitButtons";
 import prisma from "@/app/lib/db";
@@ -25,6 +27,7 @@ async function getData(id: string) {
       imageString: true,
       textContent: true,
       subjectName: true,
+      userId: true,
       id: true,
       Vote: {
         select: {
@@ -70,6 +73,9 @@ async function getData(id: string) {
 
 export default async function PostPage({ params }: { params: { id: string } }) {
   const data = await getData(params.id);
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+  const isOwner = !!user && data.userId === user.id;
 
   return (
     <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row gap-x-10 mt-4 lg:px-0 px:5 mb-100">
@@ -122,6 +128,12 @@ export default async function PostPage({ params }: { params: { id: string } }) {
               </div>
 
               <CopyLink id={params.id} />
+              {isOwner && (
+                <DeletePostButton
+                  postId={data.id}
+                  redirectTo={data.subjectName ? `/subject/${data.subjectName}` : "/forum"}
+                />
+              )}
             </div>
 
             <CommentForm postId={params.id} />
