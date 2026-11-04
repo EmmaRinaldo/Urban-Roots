@@ -42,7 +42,7 @@ export function ProjectDescriptionForm({description, projectName}: iAppProps) {
         <form className="mt-3" action={formAction}>
             <input type="hidden" name="projectName" value={projectName} />
             <Textarea 
-                placeholder="Créer la desctription pour votre sujet de discussion"
+                placeholder="Ajoutez une description à votre sujet de discussion"
                 maxLength={100}
                 name="description"
                 defaultValue={description ?? undefined}

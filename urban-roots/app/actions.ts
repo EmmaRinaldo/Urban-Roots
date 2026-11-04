@@ -126,6 +126,18 @@ export async function updateSujetDescription(prevState: any, formData: FormData)
         const projectName = decodeURIComponent(formData.get("projectName") as string);
         const description = formData.get("description") as string;
 
+        const subject = await prisma.subjectforum.findUnique({
+            where: { name: projectName },
+            select: { userId: true },
+        });
+
+        if (!subject || subject.userId !== user.id) {
+            return {
+                status: "error",
+                message: "Vous ne pouvez modifier que vos propres sujets",
+            }
+        }
+
         await prisma.subjectforum.update({
             where: {
                 name: projectName,
@@ -134,6 +146,9 @@ export async function updateSujetDescription(prevState: any, formData: FormData)
                 description: description,
             }
         })
+
+        revalidatePath(`/subject/${projectName}`);
+        revalidatePath("/post/[id]", "page");
 
         return {
             status: "green",

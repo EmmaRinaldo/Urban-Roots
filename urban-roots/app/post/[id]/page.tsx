@@ -2,6 +2,7 @@ import { handleVote } from "@/app/actions";
 import { CommentForm } from "@/app/components/CommentForm";
 import { CopyLink } from "@/app/components/CopyLink";
 import { DeletePostButton } from "@/app/components/DeletePostButton";
+import { ProjectDescriptionForm } from "@/app/components/ProjectDescriptionForm";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { RenderToJson } from "@/app/components/RendertoJson";
 import { DownVote, UpVote } from "@/app/components/SubmitButtons";
@@ -54,6 +55,7 @@ async function getData(id: string) {
           name: true,
           createdAt: true,
           description: true,
+          userId: true,
         },
       },
       User: {
@@ -188,9 +190,20 @@ export default async function PostPage({ params }: { params: { id: string } }) {
                         </Link>
                     </div>
 
-                    <p className="text-sm font-normal text-secondary-foreground mt-2">
-                        {data?.Subjectforum?.description}
-                    </p>
+                    {user && data.subjectName && data.Subjectforum?.userId === user.id ? (
+                        <ProjectDescriptionForm
+                            description={data.Subjectforum?.description}
+                            projectName={data.subjectName}
+                        />
+                    ) : data?.Subjectforum?.description ? (
+                        <p className="text-sm font-normal text-secondary-foreground mt-2">
+                            {data.Subjectforum.description}
+                        </p>
+                    ) : (
+                        <p className="text-sm text-muted-foreground mt-2">
+                            Aucune description pour ce sujet.
+                        </p>
+                    )}
 
                     <div className="flex items-center gap-x-2 mt-4">
                         <Cake className="h-5 w-5 text-muted-foreground"/>
