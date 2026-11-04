@@ -82,6 +82,39 @@ export async function createSubject(prevState: any, formData: FormData) {
     }
 }
 
+export async function createSubjectInline(
+    rawName: string
+): Promise<{ ok: true; name: string } | { ok: false; message: string }> {
+    const {getUser} = getKindeServerSession();
+    const user = await getUser();
+
+    if(!user) {
+        return { ok: false, message: "Vous devez être connecté" };
+    }
+
+    const name = (rawName ?? "").trim();
+    if (name.length < 2 || name.length > 21) {
+        return { ok: false, message: "Le nom doit faire entre 2 et 21 caractères" };
+    }
+
+    try {
+        await prisma.subjectforum.create({
+            data: {
+                name: name,
+                userId: user.id,
+            }
+        });
+    } catch (e) {
+        if(e instanceof Prisma.PrismaClientKnownRequestError && e.code === 'P2002') {
+            return { ok: false, message: "Ce sujet existe déjà !" };
+        }
+        throw e;
+    }
+
+    revalidatePath("/forum");
+    return { ok: true, name };
+}
+
 export async function updateSujetDescription(prevState: any, formData: FormData) {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
@@ -128,6 +161,14 @@ export async function createPost(
     const title = formData.get("title") as string;
     const imageUrl = formData.get("imageUrl") as string | null;
     const subjectName = formData.get("subjectName") as string;
+
+    const subject = subjectName
+        ? await prisma.subjectforum.findUnique({ where: { name: subjectName } })
+        : null;
+
+    if (!subject) {
+        throw new Error("Sujet de discussion invalide");
+    }
 
     const data = await prisma.post.create({
         data: {
@@ -241,6 +282,7 @@ export async function deletePost(formData: FormData) {
     await prisma.post.delete({ where: { id: postId } });
 
     revalidatePath("/forum");
+    revalidatePath("/mes-posts");
     if (post.subjectName) {
         revalidatePath(`/subject/${post.subjectName}`);
     }
